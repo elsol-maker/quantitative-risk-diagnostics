@@ -1,6 +1,7 @@
 import yfinance as yf
 import numpy as np
 import pandas as pd
+from datetime import date
 from google import genai
 import os
 import re
@@ -45,8 +46,8 @@ def get_default_benchmark(ticker):
     return "^GSPC" # Default to S&P 500
 
 @st.cache_data(ttl=3600, show_spinner=False)
-def fetch_market_data(tickers, period="1y", interval="1d"):
-    """Cached data fetcher to prevent rate limiting and speed up the UI."""
+def fetch_market_data(tickers, period="1y", interval="1d", refresh_date=date.today().isoformat()):
+    """Cached data fetcher that auto-refreshes every day."""
     data = yf.download(tickers, period=period, interval=interval, progress=False)
     
     if isinstance(data.columns, pd.MultiIndex):
