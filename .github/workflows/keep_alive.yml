@@ -1,0 +1,12 @@
+name: Keep Streamlit Alive
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Streamlit App
+        run: curl -s https://quantitative-risk-diagnostics.streamlit.app/ > /dev/null
