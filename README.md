@@ -8,8 +8,6 @@ Smart Benchmarking: The system automatically identifies an asset's home marketâ€
 
 Performance Attribution: It uses the 10-Year Treasury Note as a dynamic risk-free rate to calculate the Annualized Sharpe Ratio, measuring how much return you get for every unit of risk taken.
 
-AI Interpretation: A built-in integration with Gemini 2.0 Flash reads the quantitative data and writes a formal summary of the asset's risk profile.
-
 Technical Foundation
 The engine is built for accuracy and speed, utilizing vectorized operations to handle complex financial math across different timezones and asset classes.
 
